@@ -1261,10 +1261,11 @@ code {
   border-color: color-mix(in srgb, #00a040 45%, transparent);
   color: #6ee79b;
 }
-.zhiznmart-clover {
-  width: 17px;
-  height: 17px;
+.zhiznmart-icon {
+  width: 22px;
+  height: 14px;
   flex-shrink: 0;
+  display: block;
 }
 .zhiznmart-title {
   font-family: var(--sans);
