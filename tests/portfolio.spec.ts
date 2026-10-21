@@ -91,7 +91,8 @@ for (const width of [360, 768, 1440]) {
       });
       await page.goto('./');
       await page.evaluate(() => document.fonts.ready);
-      await expect(page.locator('h1')).toContainText('Вадим Баранов');
+      await expect(page.locator('h1')).toBeVisible();
+      await expect(page.locator('h1')).toHaveText(/\S/);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
       );

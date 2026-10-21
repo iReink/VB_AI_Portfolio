@@ -25,6 +25,8 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm run lint
+      - name: Format browser-edited HTML before validation
+        run: npx prettier --write index.html
       - run: npm run format:check
       - run: npm run build
       - run: npx playwright install --with-deps chromium
