@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Вадим Баранов. Создаю AI-инструменты и автоматизацию: RAG, Telegram-боты, работа с данными. Продуктовое мышление и опыт B2B SaaS — для задач Goulash."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="Вадим Баранов — AI-инструменты и автоматизация" />
+    <meta
+      property="og:description"
+      content="От понимания процесса до работающего инструмента. Проекты, решения и опыт для Goulash."
+    />
+    <meta property="og:url" content="https://ireink.github.io/VB_AI_Portfolio/" />
+    <meta
+      property="og:image"
+      content="https://ireink.github.io/VB_AI_Portfolio/images/portrait.jpg"
+    />
+    <link rel="canonical" href="https://ireink.github.io/VB_AI_Portfolio/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/manrope-variable.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/lora-variable.ttf" as="font" type="font/ttf" crossorigin />
+    <title>Вадим Баранов — AI-инструменты и автоматизация</title>
+    <script>
+      (() => {
+        let theme = 'system';
+        try {
+          theme = localStorage.getItem('portfolio-theme') || 'system';
+        } catch {
+          /* Storage may be unavailable. */
+        }
+        if (!['system', 'light', 'dark'].includes(theme)) theme = 'system';
+        document.documentElement.dataset.theme =
+          theme === 'system'
+            ? matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+            : theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header wrap">
+      <a class="wordmark" href="#main" aria-label="Вадим Баранов — начало"
+        ><span class="monogram">вб<span>·</span></span
+        ><span class="wordmark-name">Вадим Баранов</span></a
+      >
+      <nav aria-label="Основная навигация">
+        <a href="#projects">Проекты</a><a href="#experience">Опыт</a><a href="#contact">Контакты</a>
+      </nav>
+      <label class="theme-control"
+        ><span aria-hidden="true">◐</span><span class="sr-only">Цветовая тема</span
+        ><select id="theme" aria-label="Цветовая тема">
+          <option value="system">Системная</option>
+          <option value="light">Светлая</option>
+          <option value="dark">Тёмная</option>
+        </select></label
+      >
+    </header>
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot"></span> Портфолио для Goulash
+            <span class="eyebrow-divider">/</span> 2026
+          </p>
+          <h1 id="hero-title">
+            Вадим Баранов<span class="hero-role"
+              >AI-инструменты<br />и <em>автоматизация.</em></span
+            >
+          </h1>
+          <p class="hero-description">
+            Разбираюсь в процессах, проектирую логику и создаю работающие инструменты с ИИ. Соединяю
+            опыт продуктового дизайна с практикой разработки.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects"
+              >Смотреть проекты <span aria-hidden="true">↘</span></a
+            ><a class="text-link" href="https://t.me/iReink"
+              >Написать в Telegram <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="hero-footnote">
+            <span>Python / SQL / LLM / RAG</span><span>Екатеринбург</span>
+          </div>
+        </div>
+        <figure class="portrait-block">
+          <div class="portrait-frame">
+            <img
+              src="/images/portrait.webp"
+              alt="Вадим Баранов"
+              width="640"
+              height="640"
+              fetchpriority="high"
+            /><span class="portrait-mark" aria-hidden="true"
+              >От задачи<br />к работающему<br /><em>решению.</em></span
+            >
+          </div>
+          <figcaption>
+            <span>Продуктовое мышление.<br />Практика с ИИ.</span
+            ><span class="portrait-index" aria-hidden="true">01 — 26</span>
+          </figcaption>
+        </figure>
+      </section>
+      <section id="projects" class="projects section wrap" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / Избранные проекты</p>
+            <h2 id="projects-title">Идеи, которые <em>работают.</em></h2>
+          </div>
+          <p class="section-aside">
+            Личные проекты.<br />Реальные задачи и ежедневное использование.
+          </p>
+        </div>
+        <div class="featured-grid">
+          <a class="project-card featured-bot" href="#case-community-bot" data-case="community-bot">
+            <div class="project-visual bot-visual" aria-hidden="true">
+              <div class="visual-topline">
+                <span><i class="status-dot"></i> COMMUNITY ASSISTANT</span><span>01</span>
+              </div>
+              <div class="bot-orbit">
+                <div class="orbit-label orbit-memory">Память<span>450 тыс. сообщений</span></div>
+                <div class="orbit-label orbit-data">Данные<span>Text-to-SQL</span></div>
+                <div class="bot-core">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <path
+                      d="M32 7v8M27 7h10M14 25c0-6 5-10 11-10h14c6 0 11 4 11 10v17c0 6-5 10-11 10H25c-6 0-11-4-11-10V25Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M7 29v12m50-12v12M25 41h14"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <circle cx="25" cy="30" r="3" fill="currentColor" />
+                    <circle cx="39" cy="30" r="3" fill="currentColor" /></svg
+                  ><span>AI</span>
+                </div>
+                <div class="orbit-label orbit-models">Модели<span>Пулы под задачи</span></div>
+                <div class="orbit-label orbit-knowledge">
+                  Знания<span>RAG по документации</span>
+                </div>
+              </div>
+              <div class="visual-bottomline">
+                <span>Контекст → решение → ответ</span><span>Python · Qdrant · LLM</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="card-category">AI-помощник / Telegram + Web</div>
+              <h3>
+                Бот, который помнит<br />и понимает контекст
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </h3>
+              <p>
+                История сообщества, поиск по знаниям и статистика на естественном языке — в одном
+                инструменте.
+              </p>
+              <div class="project-tags">
+                <span>RAG</span><span>Text-to-SQL</span><span>Мультимодальность</span>
+              </div>
+              <div class="card-metrics">
+                <span><strong>≈30</strong> пользователей</span
+                ><span><strong>≈500</strong> обращений к LLM / сутки</span>
+              </div>
+              <span class="metrics-note">Оценки автора, октябрь 2026</span>
+            </div>
+          </a>
+          <a class="project-card featured-diary" href="#case-diary" data-case="diary">
+            <div class="project-visual diary-visual">
+              <div class="visual-topline" aria-hidden="true">
+                <span>DAILY CARE</span><span>02</span>
+              </div>
+              <img
+                src="/images/diary.webp"
+                alt="Интерфейс дневника: быстрая запись кормления и веса"
+                width="1212"
+                height="905"
+                loading="lazy"
+              />
+              <div class="diary-float" aria-hidden="true">
+                <span class="notification-icon">↗</span
+                ><span>Пора кормить<span>Записать прямо в Telegram</span></span
+                ><span class="notification-dot"></span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="card-category">Веб-приложение + бот-компаньон</div>
+              <h3>
+                Меньше рутины.<br />Больше внимания
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </h3>
+              <p>
+                Дневник питания и веса ребёнка. Быстрый ввод, наглядная динамика и напоминания с
+                действием в один клик.
+              </p>
+              <div class="project-tags">
+                <span>Автоматизация</span><span>Telegram</span><span>PDF / CSV</span>
+              </div>
+              <div class="card-bottom">
+                От записи до отчёта для врача <span aria-hidden="true">↗</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="subsection-heading">
+          <h3>Ещё несколько решений</h3>
+          <span>Исследую инструменты через практику</span>
+        </div>
+        <div class="small-projects">
+          <a class="small-card" href="#case-markdown" data-case="markdown"
+            ><div class="mini-visual markdown-visual" aria-hidden="true">
+              <span class="md-plain">Обычный текст</span><span class="md-arrow">→</span
+              ><span class="md-code"># Структура<br /><i>**Смысл**</i><br />— Порядок</span>
+            </div>
+            <div class="card-category">LLM / Инструмент для работы</div>
+            <h3>Текст → Markdown <span aria-hidden="true">↗</span></h3>
+            <p>Восстановление структуры и разметки текста одной кнопкой.</p></a
+          >
+          <a class="small-card" href="#case-gps" data-case="gps"
+            ><div class="mini-visual gps-visual" aria-hidden="true">
+              <svg viewBox="0 0 340 140" fill="none">
+                <path
+                  d="M0 45h340M0 95h340M65 0v140M170 0v140M275 0v140"
+                  stroke="currentColor"
+                  opacity=".08"
+                />
+                <path
+                  d="m40 100 37-20 15-35 40 10 25-20 24 50 40-18 24 25 50-50"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="40" cy="100" r="6" fill="currentColor" />
+                <circle
+                  cx="295"
+                  cy="42"
+                  r="6"
+                  fill="var(--card-bg)"
+                  stroke="currentColor"
+                  stroke-width="3"
+                />
+                <path
+                  d="m181 85 40-18 24 25"
+                  stroke="var(--accent)"
+                  stroke-width="5"
+                  stroke-dasharray="5 7"
+                /></svg
+              ><span>Записать. Уточнить. Сохранить.</span>
+            </div>
+            <div class="card-category">Android / Личный инструмент</div>
+            <h3>GPS-трекер активностей <span aria-hidden="true">↗</span></h3>
+            <p>Редактирование маршрута прямо на телефоне, когда забыл остановить запись.</p></a
+          >
+          <a class="small-card" href="#case-unity" data-case="unity"
+            ><div class="mini-visual unity-visual" aria-hidden="true">
+              <div class="iso-grid">
+                <i></i><i></i><i></i><i></i><i class="iso-player"></i><i></i><i></i><i></i><i></i>
+              </div>
+              <span>Идея × генерация × обучение</span>
+            </div>
+            <div class="card-category">Unity / Эксперимент</div>
+            <h3>Игра с обучаемым ИИ <span aria-hidden="true">↗</span></h3>
+            <p>Изометрическая 2D-игра: от генерации ассетов до обучения противника.</p></a
+          >
+        </div>
+      </section>
+      <section id="experience" class="experience section" aria-labelledby="experience-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">02 / Опыт и польза</p>
+              <h2 id="experience-title">Понимать процесс.<br /><em>Менять его к лучшему.</em></h2>
+            </div>
+            <p class="section-aside">Что я привношу<br />в задачи Goulash</p>
+          </div>
+          <div class="experience-grid">
+            <div class="experience-intro">
+              <p>
+                В AI-проектах мне помогает опыт продуктового дизайна: сначала понять, где теряются
+                время и данные, затем выбрать инструмент и проверить решение в работе.
+              </p>
+              <a
+                class="text-link"
+                href="https://ireink.notion.site/172d2792f4734e97b00b155a7467dc7a"
+                >Полное резюме в Notion <span aria-hidden="true">↗</span></a
+              >
+              <div class="experience-number">
+                <strong>3 года</strong
+                ><span>в продуктовом дизайне<br />мобильных и веб-продуктов</span>
+              </div>
+            </div>
+            <div class="experience-list">
+              <article class="experience-item">
+                <span class="experience-index">01</span>
+                <div>
+                  <p class="card-category">101 / B2B SaaS · 2024–2026</p>
+                  <h3>Разобраться в сложной логике</h3>
+                  <p>
+                    Проектировал прайсы, роли, расчёты и сквозные сценарии отчётов и смет. Этот опыт
+                    помогает находить ручные операции и определять, какие данные и правила нужны для
+                    автоматизации.
+                  </p>
+                </div>
+              </article>
+              <article class="experience-item">
+                <span class="experience-index">02</span>
+                <div>
+                  <p class="card-category">Интеграции / Прототипирование</p>
+                  <h3>Проверить решение до запуска</h3>
+                  <p>
+                    Изучал возможности API Точка Банка и согласовывал сценарии с партнёром. Собрал
+                    функциональный прототип прайса в Figma Make за два дня — для проверки логики и
+                    обсуждения с разработчиком.
+                  </p>
+                </div>
+              </article>
+              <article class="experience-item">
+                <span class="experience-index">03</span>
+                <div>
+                  <p class="card-category">Жизньмарт / Обучение · 2021–2023</p>
+                  <h3>Помочь людям освоить инструмент</h3>
+                  <p>
+                    Изучал сложности сотрудников во внутренних IT-системах, создавал курсы и
+                    инструкции для линейного персонала. Знаком с контекстом Retail и переводом
+                    сложных процессов в понятные действия.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="design-section section wrap" aria-labelledby="design-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">03 / Смежный опыт</p>
+            <h2 id="design-title">Продуктовая <em>основа.</em></h2>
+          </div>
+          <p class="section-aside">Работа с данными, сценариями<br />и ограничениями бизнеса</p>
+        </div>
+        <div class="design-grid">
+          <a class="design-card" href="#case-pricing" data-case="pricing"
+            ><span class="design-card-number">01</span>
+            <div>
+              <p class="card-category">Коммерческий проект / Mobile + Web</p>
+              <h3>Прайс-листы как система <span aria-hidden="true">↗</span></h3>
+              <p>Модель данных, управление ценами и десктопная среда для массовых операций.</p>
+              <span class="inline-tags">B2B SaaS · Figma Make · Проектирование логики</span>
+            </div></a
+          ><a class="design-card" href="#case-waiter" data-case="waiter"
+            ><span class="design-card-number">02</span>
+            <div>
+              <p class="card-category">Тестовый проект / HoReCa</p>
+              <h3>Инструмент официанта <span aria-hidden="true">↗</span></h3>
+              <p>От интервью с управляющей до сценариев приёма заказа и работы с меню.</p>
+              <span class="inline-tags">Исследование · Операционные процессы · UX</span>
+            </div></a
+          >
+        </div>
+      </section>
+      <section class="approach wrap" aria-labelledby="approach-title">
+        <p class="eyebrow">Как я работаю</p>
+        <div>
+          <h2 id="approach-title">
+            ИИ помогает создавать.<br /><em>Я отвечаю за направление.</em>
+          </h2>
+          <p>
+            Разрабатываю с ИИ-агентами. Формулирую задачи и ограничения, контролирую алгоритмы и
+            архитектуру данных, проверяю решения и провожу дополнительные аудиты с ИИ. Часть
+            технических решений предлагают агенты — мой вклад в каждом кейсе описан отдельно.
+          </p>
+          <div class="approach-steps">
+            <span>Понять задачу</span><i aria-hidden="true">→</i><span>Собрать решение</span
+            ><i aria-hidden="true">→</i><span>Проверить в работе</span>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact section wrap" aria-labelledby="contact-title">
+        <p class="eyebrow">04 / Давайте обсудим</p>
+        <div class="contact-main">
+          <h2 id="contact-title">Какая задача<br /><em>будет следующей?</em></h2>
+          <div>
+            <p>
+              Хочу применять опыт работы с продуктами, данными и ИИ к задачам Goulash — от первых
+              пилотов до инструментов в ежедневной работе команды.
+            </p>
+            <a class="button button-primary" href="https://t.me/iReink"
+              >Написать в Telegram <span aria-hidden="true">↗</span></a
+            ><a class="contact-email" href="mailto:ireink@gmail.com">ireink@gmail.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <span>© 2026 Вадим Баранов</span><span>Сделано с вниманием к смыслу и деталям.</span
+      ><a href="https://github.com/iReink/VB_AI_Portfolio"
+        >Код этого сайта <span aria-hidden="true">↗</span></a
+      >
+    </footer>
+    <section class="case-library wrap" aria-label="Подробности проектов">
+      <details id="case-community-bot" class="case-detail">
+        <summary>AI-помощник для Telegram-сообщества</summary>
+        <article class="case-body" data-title="AI-помощник для сообщества">
+          <p class="eyebrow">Личный проект / Telegram · Web · Desktop</p>
+          <h2>Помощник с памятью<br />и доступом к данным</h2>
+          <p class="case-lead">
+            От фиксированных команд статистики — к вопросам на естественном языке и ответам с
+            контекстом сообщества.
+          </p>
+          <div class="case-stats">
+            <div><strong>≈30</strong><span>пользователей</span></div>
+            <div><strong>450 тыс.</strong><span>сообщений в векторной базе</span></div>
+            <div><strong>≈500</strong><span>обращений к LLM в сутки</span></div>
+          </div>
+          <p class="caption">
+            Оценки автора на октябрь 2026 года. Один пользовательский запрос может включать
+            несколько обращений к моделям.
+          </p>
+          <h3>Контекст и проблема</h3>
+          <p>
+            Развиваю игрового бота закрытого дизайн-сообщества. Первые команды показывали недельные
+            и общие топы активности. Для каждой новой выборки требовалась реализация в коде, а
+            ответы на вопросы о механиках и поиск старых обсуждений оставались ручной задачей.
+          </p>
+          <h3>Технические решения</h3>
+          <p>
+            Типизатор определяет задачу и направляет её в нужный обработчик. Для общения
+            объединяются последние сообщения, почасовые саммари за сутки, RAG по всей истории и
+            профиль пользователя. Каждую ночь чанки сообщений и документация векторизуются через
+            Gemini Embedding 2 и загружаются в Qdrant. Перед поиском языковая модель формирует
+            поисковый запрос.
+          </p>
+          <div
+            class="pipeline"
+            role="img"
+            aria-label="Запрос пользователя, типизатор, поиск по истории или документации либо SQL-выборка с проверкой ограничений, контекст, пул моделей, ответ"
+          >
+            <span>Запрос</span><b aria-hidden="true">→</b><span>Типизатор</span
+            ><b aria-hidden="true">→</b>
+            <div><span>RAG: история + знания</span><span>SQL: проверка SELECT + полей</span></div>
+            <b aria-hidden="true">→</b><span>Контекст + LLM</span><b aria-hidden="true">→</b
+            ><span>Ответ</span>
+          </div>
+          <p>
+            Text-to-SQL использует схему с описанием смысла полей. Схема обновляется при изменениях
+            данных; чувствительные поля исключены из описания. Перед выполнением бот проверяет, что
+            запрос относится к SELECT, и сверяет поля с чёрным списком. Эти проверки ограничивают
+            доступ, но не являются заявлением об абсолютной защите.
+          </p>
+          <p>
+            Для задач предусмотрены пулы моделей от сильных к более простым. Если ответ не получен,
+            бот переходит к следующей модели. Это позволяет использовать бесплатные API-лимиты для
+            ежедневной работы. Есть мультимодальные ответы, TTS, генерация изображений и
+            мини-приложение с саммари чата.
+          </p>
+          <h3>Результат и развитие</h3>
+          <p>
+            Участники могут запрашивать собственные топы, находить давние обсуждения и получать
+            объяснения механик простым языком. По наблюдениям при использовании, добавление RAG по
+            документации улучшило интерпретацию запросов; количественный тест не проводился.
+          </p>
+          <p>
+            AI-функции появились весной 2026 года на локальной модели через Ollama и worker на моём
+            ПК. С сентября используются облачные API. Бот размещён на сервере и дополнен
+            веб-интерфейсом и десктопным питомцем.
+          </p>
+          <h3>Мой вклад</h3>
+          <p>
+            Формулировал сценарии и ограничения, контролировал алгоритмы и архитектуру данных,
+            проверял решения и проводил аудиты с ИИ. Разработку вёл с ИИ-агентом; часть технических
+            решений предложена агентом.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>SQLite</span><span>Qdrant</span><span>Gemini Embedding 2</span
+            ><span>Ollama</span><span>LLM API</span>
+          </div>
+          <p class="case-note">
+            Переписки участников, исходный код бота и уникальные игровые механики не публикуются.
+            Схема показывает общий принцип работы.
+          </p>
+        </article>
+      </details>
+      <details id="case-diary" class="case-detail">
+        <summary>Дневник ребёнка и бот-компаньон</summary>
+        <article class="case-body" data-title="Дневник и бот-компаньон">
+          <p class="eyebrow">Личный проект / Веб-приложение + Telegram</p>
+          <h2>Ежедневная забота<br />без лишних действий</h2>
+          <p class="case-lead">
+            Питание, стул и динамика веса — в одном дневнике с напоминаниями и экспортом.
+          </p>
+          <h3>Контекст и проблема</h3>
+          <p>
+            Создал инструмент для ежедневного учёта ухода за новорождённым ребёнком. Записи нужно
+            вносить регулярно и быстро, видеть динамику веса, а при необходимости передавать дневник
+            врачу или выгружать данные для анализа.
+          </p>
+          <h3>Решения</h3>
+          <p>
+            На основном экране — быстрые кнопки типового объёма питания, запись веса и отметка
+            стула. Интервал кормления задаётся в приложении. Бот-компаньон уведомляет, если после
+            последнего кормления прошло больше заданного времени, и позволяет записать кормление
+            одной кнопкой в Telegram.
+          </p>
+          <figure class="case-image">
+            <a href="/VB_AI_Portfolio/images/diary.webp" target="_blank" rel="noopener"
+              ><img
+                src="/images/diary.webp"
+                alt="Главный экран дневника с быстрыми кнопками записи питания, веса и интервалом кормления"
+                width="1212"
+                height="905"
+                loading="lazy"
+            /></a>
+            <figcaption>
+              Основные ежедневные действия собраны на одном экране. Нажмите на изображение для
+              увеличения.
+            </figcaption>
+          </figure>
+          <p>
+            График объединяет историю веса и питания. Дневник экспортируется в PDF для передачи
+            врачу и CSV для машинного анализа.
+          </p>
+          <figure class="case-image">
+            <a href="/VB_AI_Portfolio/images/diary-chart.webp" target="_blank" rel="noopener"
+              ><img
+                src="/images/diary-chart.webp"
+                alt="График истории веса и ежедневного питания в дневнике"
+                width="1205"
+                height="805"
+                loading="lazy"
+            /></a>
+            <figcaption>Визуализация истории записей.</figcaption>
+          </figure>
+          <figure class="case-image notification-image">
+            <a href="/VB_AI_Portfolio/images/diary-bot.webp" target="_blank" rel="noopener"
+              ><img
+                src="/images/diary-bot.webp"
+                alt="Напоминание в Telegram: пора кормить; кнопки записи 90 и 120 граммов"
+                width="715"
+                height="183"
+                loading="lazy"
+            /></a>
+            <figcaption>
+              Уведомление сразу содержит действие — открывать веб-приложение для записи не нужно.
+            </figcaption>
+          </figure>
+          <h3>Результат</h3>
+          <p>
+            Получился связанный процесс: быстрая запись → история и график → напоминание → новое
+            действие из Telegram → экспорт. Приложение используется для личной ежедневной задачи;
+            количественные показатели экономии времени не измерялись.
+          </p>
+          <h3>Мой вклад</h3>
+          <p>
+            Определил потребности и основные сценарии, спроектировал взаимодействие с минимальным
+            числом нажатий и разработал решение с помощью ИИ.
+          </p>
+        </article>
+      </details>
+      <details id="case-markdown" class="case-detail">
+        <summary>Восстановление Markdown</summary>
+        <article class="case-body" data-title="Текст → Markdown">
+          <p class="eyebrow">Личный проект / LLM-инструмент</p>
+          <h2>Вернуть тексту<br /><em>структуру</em></h2>
+          <p class="case-lead">Утилита для восстановления Markdown-разметки из обычного текста.</p>
+          <h3>Контекст и проблема</h3>
+          <p>
+            При переносе текста без форматирования теряется структура: заголовки, списки и смысловые
+            акценты. Ручное восстановление разметки добавляет повторяющуюся работу перед сохранением
+            Markdown-файла.
+          </p>
+          <h3>Решение</h3>
+          <p>
+            В редактор можно написать или вставить plain text и нажать «Восстановить». LLM
+            анализирует структуру и возвращает текст с готовой разметкой. Операция собрана в одно
+            действие внутри инструмента, где пользователь уже работает с текстом.
+          </p>
+          <div class="before-after">
+            <div>
+              <span class="card-category">До / Plain text</span>
+              <pre>
+План встречи
+Обсудить
+Приоритеты команды
+Следующие шаги</pre>
+            </div>
+            <div>
+              <span class="card-category">После / Markdown</span>
+              <pre>
+# План встречи
+## Обсудить
+- Приоритеты команды
+- Следующие шаги</pre>
+            </div>
+          </div>
+          <p class="caption">
+            Иллюстративный пример преобразования, не запись реального ответа модели.
+          </p>
+          <h3>Результат</h3>
+          <p>
+            Создан редактор с целевым LLM-действием для повторяющейся задачи. Кейс показывает
+            применение модели к конкретному этапу рабочего процесса. Скорость работы и точность
+            восстановления отдельно не измерялись.
+          </p>
+          <h3>Мой вклад</h3>
+          <p>
+            Сформулировал задачу и пользовательский сценарий, создал инструмент с помощью ИИ.
+            Конкретный стек и модель в кейсе не заявлены.
+          </p>
+        </article>
+      </details>
+      <details id="case-gps" class="case-detail">
+        <summary>GPS-трекер активностей</summary>
+        <article class="case-body" data-title="GPS-трекер активностей">
+          <p class="eyebrow">Личный проект / Android</p>
+          <h2>Маршрут, который<br />можно поправить</h2>
+          <p class="case-lead">
+            Мобильный трекер с редактированием записанных участков активности.
+          </p>
+          <h3>Контекст и проблема</h3>
+          <p>
+            Во время прогулки или другой активности можно забыть остановить запись на перерыве или
+            после финиша. Тогда в сохранённом маршруте остаются лишние участки. Мне нужен был
+            трекер, адаптированный под собственные сценарии.
+          </p>
+          <h3>Решение</h3>
+          <p>
+            Добавил мобильное редактирование трека. Участки активности и паузы представлены на
+            временной шкале. Ненужный фрагмент можно удалить свайпом, а удержанием открыть его на
+            карте и проверить перед удалением. Отдельное действие удаляет все участки без
+            активности.
+          </p>
+          <div class="phone-gallery">
+            <figure class="case-image">
+              <a href="/VB_AI_Portfolio/images/track-editor.webp" target="_blank" rel="noopener"
+                ><img
+                  src="/images/track-editor.webp"
+                  alt="Редактор маршрута: временная шкала участков активности и пауз"
+                  width="900"
+                  height="2000"
+                  loading="lazy"
+              /></a>
+              <figcaption>Шкала маршрута с отдельными участками.</figcaption>
+            </figure>
+            <figure class="case-image">
+              <a href="/VB_AI_Portfolio/images/track-map.webp" target="_blank" rel="noopener"
+                ><img
+                  src="/images/track-map.webp"
+                  alt="Предпросмотр выбранного участка маршрута на карте с кнопкой удаления"
+                  width="900"
+                  height="2000"
+                  loading="lazy"
+              /></a>
+              <figcaption>Проверка фрагмента на карте перед удалением.</figcaption>
+            </figure>
+          </div>
+          <h3>Результат</h3>
+          <p>
+            Личный Android-инструмент позволяет просмотреть и очистить уже записанный маршрут прямо
+            на телефоне. Функция показана на скриншотах; сравнение с рынком и количественная оценка
+            удобства не проводились.
+          </p>
+          <h3>Мой вклад</h3>
+          <p>
+            Определил потребность, спроектировал сценарий редактирования и создал приложение с
+            помощью ИИ. Главный акцент проекта — превращение конкретной проблемы в доступное
+            мобильное действие.
+          </p>
+        </article>
+      </details>
+      <details id="case-unity" class="case-detail">
+        <summary>Изометрическая игра с обучаемым противником</summary>
+        <article class="case-body" data-title="Игра с обучаемым ИИ">
+          <p class="eyebrow">Личный проект / Unity · 2D</p>
+          <h2>От концепта<br />до поведения противника</h2>
+          <p class="case-lead">
+            Эксперимент с разными AI-инструментами внутри одного игрового проекта.
+          </p>
+          <h3>Контекст и проблема</h3>
+          <p>
+            Разрабатываю изометрическую 2D-игру на Unity. Проект объединяет несколько разных задач:
+            код, сборку сцены, концепты, интерфейс, персонажей, анимацию и поведение компьютерного
+            противника.
+          </p>
+          <h3>Решения</h3>
+          <p>
+            Для кода и сборки в движке использую Antigravity. Концепты и интерфейс создаются с GPT
+            Image. Персонажи и спрайтовая анимация получаются через генерацию видео в Omni; затем
+            самостоятельно нарезаю материалы на атласы.
+          </p>
+          <div class="role-table">
+            <div><span>Код и сборка</span><strong>Antigravity</strong></div>
+            <div><span>Концепты и UI</span><strong>GPT Image</strong></div>
+            <div><span>Анимация</span><strong>Omni → нарезка атласов</strong></div>
+            <div>
+              <span>Поведение противника</span><strong>Клонирование + эволюционное обучение</strong>
+            </div>
+            <div><span>Геймдизайн</span><strong>Человек</strong></div>
+          </div>
+          <p>
+            Для интеллекта противника применяю поведенческое клонирование и обучение нейросетей с
+            помощью эволюционного алгоритма. Это отдельное направление эксперимента с машинным
+            обучением.
+          </p>
+          <h3>Результат</h3>
+          <p>
+            Проект даёт практику объединения генеративных инструментов и обучения поведения в общей
+            задаче. Стадия готовности, качество обученной модели и результаты пользовательского
+            тестирования здесь не заявлены.
+          </p>
+          <h3>Мой вклад</h3>
+          <p>
+            Отвечаю за геймдизайн и направление проекта, выбираю способы применения ИИ и
+            самостоятельно подготавливаю анимационные атласы. Код и часть ассетов создаются с
+            AI-инструментами.
+          </p>
+        </article>
+      </details>
+      <details id="case-pricing" class="case-detail">
+        <summary>Прайс-листы: от мобильной модели к десктопу</summary>
+        <article class="case-body" data-title="Прайс-листы как система">
+          <p class="eyebrow">Коммерческий проект / 101 · B2B SaaS</p>
+          <h2>Одна модель данных.<br />Разные рабочие сценарии.</h2>
+          <p class="case-lead">
+            Превратил ограниченный справочник в инструмент для проектов, отчётов и смет, затем
+            спроектировал десктопную среду.
+          </p>
+          <h3>Контекст и проблема</h3>
+          <p>
+            101 — продукт управленческого учёта для строительства. Один прайс на компанию заставлял
+            пользователей дублировать позиции и вручную менять цены под разные проекты. Мобильный
+            интерфейс ограничивал работу с большими объёмами данных.
+          </p>
+          <h3>Решения</h3>
+          <p>
+            Спроектировал несколько прайс-листов на компанию, иерархию категорий, ролевую модель и
+            локальные настройки цен и видимости в проекте. Связал прайсы со сценариями отчётов и
+            смет.
+          </p>
+          <p>
+            Для десктопа переосмыслил взаимодействие: табличная среда, inline-редактирование, поиск,
+            массовые операции и перемещение позиций. За два дня собрал функциональный прототип в
+            Figma Make. Проверил сценарии на пяти участниках, затем участвовал в тестировании и
+            итерациях работающего продукта.
+          </p>
+          <h3>Результат</h3>
+          <p>
+            В кейсе мобильного раздела зафиксирован рост retention D30 на 22%. После запуска
+            десктопа число новых платных подписок выросло на 8% за месяц относительно предыдущего
+            периода. Этот рост нельзя полностью приписать только десктопной версии. Подробности
+            измерений в исходных материалах ограничены.
+          </p>
+          <h3>Мой вклад</h3>
+          <p>
+            Ведущий дизайнер раздела: продуктовая логика, модель данных, сценарии, прототипирование,
+            документация и проверка реализации. Работал с Product Owner и разработчиком.
+          </p>
+          <figure class="case-image design-case-image">
+            <a href="/VB_AI_Portfolio/images/pricing.webp" target="_blank" rel="noopener"
+              ><img
+                src="/images/pricing.webp"
+                alt="Мобильный интерфейс управления несколькими прайс-листами и действиями над ними"
+                width="1600"
+                height="1752"
+                loading="lazy"
+            /></a>
+            <figcaption>Управление прайс-листами компании. Из исходного кейса в Notion.</figcaption>
+          </figure>
+          <p class="case-links">
+            <a class="text-link" href="https://www.notion.so/351b7150c93e8049b176f6296afc8ab2"
+              >Мобильный кейс в Notion ↗</a
+            ><a class="text-link" href="https://www.notion.so/34fb7150c93e81e5b1ccf53181474300"
+              >Десктопный кейс в Notion ↗</a
+            >
+          </p>
+        </article>
+      </details>
+      <details id="case-waiter" class="case-detail">
+        <summary>Приложение официанта</summary>
+        <article class="case-body" data-title="Инструмент официанта">
+          <p class="eyebrow">Тестовый проект / HoReCa</p>
+          <h2>Меню и заказ<br />в контексте работы</h2>
+          <p class="case-lead">
+            Исследование процесса приёма заказа и проектирование мобильного инструмента официанта.
+          </p>
+          <h3>Контекст и проблема</h3>
+          <p>
+            В исходной задаче официанты записывали заказы в блокнот и передавали их поварам устно.
+            Нужно было спроектировать работу с меню при приёме заказа у гостей и найти возможности
+            улучшения процесса.
+          </p>
+          <h3>Решения</h3>
+          <p>
+            Изучил iikoWaiter и провёл глубинное интервью с управляющей с более чем десятью годами
+            опыта в HoReCa. Выявил сложности поиска среди меню разных заведений, ручного переноса
+            заказов и доступа к информации о блюдах.
+          </p>
+          <p>
+            Собрал пользовательский поток и экраны: меню на весь экран, статусы заказов и
+            готовности, работа с гостями, стоп-лист и карточка блюда с составом, весом и
+            аллергенами. Предусмотрел использование актуальной информации по меню при адаптации
+            сотрудников.
+          </p>
+          <h3>Результат</h3>
+          <p>
+            Подготовлен дизайн-концепт, основанный на исследовании операционного процесса. Это
+            тестовая работа: внедрение, увеличение среднего чека и сокращение времени обслуживания
+            не заявлены.
+          </p>
+          <h3>Мой вклад</h3>
+          <p>
+            Анализ конкурента, интервью, формулирование сценариев, User Flow и проектирование
+            интерфейса. Для Goulash релевантны знакомство с задачами персонала и поиск точек
+            улучшения в HoReCa.
+          </p>
+          <a class="text-link" href="https://www.notion.so/34fb7150c93e8106912be755b2773f90"
+            >Полный кейс в Notion ↗</a
+          >
+          <figure class="case-image design-case-image">
+            <a href="/VB_AI_Portfolio/images/waiter.webp" target="_blank" rel="noopener">
+              <img
+                src="/images/waiter.webp"
+                alt="Концепт приложения официанта: текущие заказы по столам и заказы с собой"
+                width="720"
+                height="616"
+                loading="lazy"
+              />
+            </a>
+            <figcaption>Концепт экрана заказов. Из исходного кейса в Notion.</figcaption>
+          </figure>
+        </article>
+      </details>
+    </section>
+    <dialog id="case-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-toolbar">
+        <span id="dialog-title"></span
+        ><button type="button" class="dialog-close" aria-label="Закрыть кейс">
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <div id="dialog-content"></div>
+      <div class="dialog-footer">
+        <span>Вадим Баранов / Портфолио</span
+        ><button type="button" class="text-link dialog-close">Закрыть кейс ↑</button>
+      </div>
+    </dialog>
+  </body>
+</html>

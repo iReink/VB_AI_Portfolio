@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ireink.github.io/VB_AI_Portfolio/sitemap.xml
