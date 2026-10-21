@@ -55,7 +55,16 @@ function syncCaseWithUrl(): void {
   if (!dialog || !content || !title) return;
   const source = sources.get(window.location.hash.slice(1));
   if (!source) {
-    if (dialog.open) dialog.close();
+    if (dialog.open) {
+      dialog.close();
+      // Clean up synchronously: the queued native close event may arrive after
+      // browser Forward has already opened the next case.
+      restoreArticle();
+      document.body.classList.remove('modal-open');
+      document.title = originalTitle;
+      window.scrollTo({ top: pageScroll, behavior: 'instant' });
+      returnFocus?.focus({ preventScroll: true });
+    }
     return;
   }
   if (activeSource === source && dialog.open) return;
@@ -142,13 +151,6 @@ if (dialog && content && title && typeof dialog.showModal === 'function') {
   dialog.addEventListener('click', (event) => {
     if (startedOnBackdrop && event.target === dialog && isOutsideDialog(event)) closeCase();
     startedOnBackdrop = false;
-  });
-  dialog.addEventListener('close', () => {
-    restoreArticle();
-    document.body.classList.remove('modal-open');
-    document.title = originalTitle;
-    window.scrollTo({ top: pageScroll, behavior: 'instant' });
-    returnFocus?.focus({ preventScroll: true });
   });
   window.addEventListener('popstate', syncCaseWithUrl);
   window.addEventListener('hashchange', syncCaseWithUrl);
