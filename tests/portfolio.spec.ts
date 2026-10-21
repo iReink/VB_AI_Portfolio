@@ -111,6 +111,13 @@ for (const width of [360, 768, 1440]) {
         expect(href).toContain('/VB_AI_Portfolio/images/');
         expect((await page.request.get(href!)).ok()).toBe(true);
       }
+      await page.keyboard.press('Escape');
+      for (const caseId of ['community-bot', 'unity']) {
+        await page.locator('[data-case="' + caseId + '"]').click();
+        await expect(dialog).toBeVisible();
+        expect(await dialog.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
+        await page.keyboard.press('Escape');
+      }
       expect(errors).toEqual([]);
     });
   }

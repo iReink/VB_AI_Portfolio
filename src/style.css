@@ -151,16 +151,8 @@ h3 {
   align-items: center;
   gap: 16px;
 }
-.monogram {
-  font: 600 32px/1 var(--serif);
-  letter-spacing: -3px;
-}
-.monogram span {
-  color: var(--accent);
-  margin-left: 3px;
-}
 .wordmark-name {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
 }
 nav {
@@ -367,7 +359,7 @@ h2 {
   letter-spacing: -1.3px;
 }
 .section-heading h2 {
-  margin-top: 15px;
+  margin-top: 0;
 }
 .section-aside {
   color: var(--muted);
@@ -1012,7 +1004,7 @@ h2 {
   color: var(--muted);
   display: block;
 }
-.pipeline {
+.feature-flow {
   background: var(--tint);
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -1022,23 +1014,44 @@ h2 {
   justify-content: center;
   padding: 22px 12px;
   margin-block: 22px;
-  font-size: 9px;
+  font-size: 11px;
   text-align: center;
 }
-.pipeline > span,
-.pipeline > div span {
+.feature-flow > span {
   padding: 9px 7px;
   background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: 4px;
   display: block;
 }
-.pipeline > div {
-  display: grid;
-  gap: 8px;
-}
-.pipeline b {
+.feature-flow b {
   font-weight: 400;
+  color: var(--accent);
+}
+.temperature-range {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--tint);
+}
+.temperature-range strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+.temperature-range div > span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 6px;
+  color: var(--muted);
+}
+.temperature-range > span {
   color: var(--accent);
 }
 .case-note {
@@ -1246,10 +1259,7 @@ dialog[open] {
     padding-block: 14px 8px;
   }
   .wordmark-name {
-    font-size: 11px;
-  }
-  .monogram {
-    font-size: 28px;
+    font-size: 14px;
   }
   .theme-control {
     margin-left: auto;
@@ -1352,7 +1362,7 @@ dialog[open] {
     display: none;
   }
   .section-heading h2 {
-    margin-top: 12px;
+    margin-top: 0;
   }
   .featured-grid {
     grid-template-columns: 1fr;
@@ -1562,20 +1572,24 @@ dialog[open] {
   .case-stats span {
     font-size: 8px;
   }
-  .pipeline {
+  .feature-flow {
     flex-direction: column;
     font-size: 10px;
     padding: 18px;
   }
-  .pipeline > b {
+  .feature-flow > b {
     transform: rotate(90deg);
   }
-  .pipeline > div {
+  .feature-flow > span {
     width: 100%;
-    grid-template-columns: 1fr 1fr;
   }
-  .pipeline > span {
-    width: 100%;
+  .temperature-range {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .temperature-range > span {
+    transform: rotate(90deg);
+    justify-self: start;
   }
   .before-after {
     grid-template-columns: 1fr;
