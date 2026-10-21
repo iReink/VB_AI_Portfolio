@@ -54,14 +54,77 @@
       <nav aria-label="Основная навигация">
         <a href="#projects">Проекты</a><a href="#experience">Опыт</a><a href="#contact">Контакты</a>
       </nav>
-      <label class="theme-control"
-        ><span aria-hidden="true">◐</span><span class="sr-only">Цветовая тема</span
-        ><select id="theme" aria-label="Цветовая тема">
+      <div class="theme-segmented" role="radiogroup" aria-label="Режим оформления">
+        <button
+          type="button"
+          class="theme-segment-btn"
+          data-theme-val="system"
+          role="radio"
+          aria-checked="true"
+          title="Системная тема"
+        >
+          <svg
+            class="theme-icon"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <rect x="2" y="3" width="12" height="9" rx="1.5" />
+            <path d="M5 14h6M8 12v2" />
+          </svg>
+          <span>Авто</span>
+        </button>
+        <button
+          type="button"
+          class="theme-segment-btn"
+          data-theme-val="light"
+          role="radio"
+          aria-checked="false"
+          title="Светлая тема"
+        >
+          <svg
+            class="theme-icon"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <circle cx="8" cy="8" r="3" />
+            <path
+              d="M8 1.5v1.5M8 13v1.5M1.5 8h1.5M13 8h1.5M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1"
+            />
+          </svg>
+          <span>Светлая</span>
+        </button>
+        <button
+          type="button"
+          class="theme-segment-btn"
+          data-theme-val="dark"
+          role="radio"
+          aria-checked="false"
+          title="Тёмная тема"
+        >
+          <svg
+            class="theme-icon"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M13.2 9.8A6 6 0 1 1 6.2 2.8a4.8 4.8 0 0 0 7 7Z" />
+          </svg>
+          <span>Тёмная</span>
+        </button>
+        <select id="theme" class="sr-only" aria-label="Цветовая тема" tabindex="-1">
           <option value="system">Системная</option>
           <option value="light">Светлая</option>
           <option value="dark">Тёмная</option>
-        </select></label
-      >
+        </select>
+      </div>
     </header>
     <main id="main">
       <section class="hero wrap" aria-labelledby="hero-title">
@@ -75,7 +138,7 @@
           </h1>
           <p class="hero-description">
             Разбираюсь в процессах, проектирую логику и создаю работающие инструменты с ИИ. Соединяю
-            опыт продуктового дизайна с практикой разработки
+            опыт продуктового дизайна с практикой разработки.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#projects">Смотреть проекты</a
@@ -116,9 +179,17 @@
                 <span><i class="status-dot"></i> COMMUNITY ASSISTANT</span><span>01</span>
               </div>
               <div class="bot-orbit">
+                <svg class="bot-network-lines" viewBox="0 0 270 225" fill="none" aria-hidden="true">
+                  <!-- Central connection rays with animated pulses -->
+                  <line class="data-ray ray-tl" x1="135" y1="112" x2="38" y2="44" />
+                  <line class="data-ray ray-tr" x1="135" y1="112" x2="232" y2="44" />
+                  <line class="data-ray ray-bl" x1="135" y1="112" x2="38" y2="180" />
+                  <line class="data-ray ray-br" x1="135" y1="112" x2="232" y2="180" />
+                </svg>
                 <div class="orbit-label orbit-memory">Память<span>450 тыс. сообщений</span></div>
                 <div class="orbit-label orbit-data">Данные<span>Text-to-SQL</span></div>
                 <div class="bot-core">
+                  <div class="bot-core-radar" aria-hidden="true"></div>
                   <svg viewBox="0 0 64 64" fill="none">
                     <path
                       d="M32 7v8M27 7h10M14 25c0-6 5-10 11-10h14c6 0 11 4 11 10v17c0 6-5 10-11 10H25c-6 0-11-4-11-10V25Z"
@@ -313,15 +384,39 @@
                   </p>
                 </div>
               </article>
-              <article class="experience-item">
+              <article class="experience-item experience-zhiznmart">
                 <span class="experience-index">03</span>
                 <div>
-                  <p class="card-category">Жизньмарт / Обучение · 2021–2023</p>
-                  <h3>Помогал сотрудникам осваивать IT-системы</h3>
+                  <div class="company-brand-row">
+                    <span class="zhiznmart-badge" aria-label="Жизньмарт">
+                      <svg
+                        class="zhiznmart-clover"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <circle cx="8" cy="8" r="4.2" fill="#00A040" />
+                        <circle cx="16" cy="8" r="4.2" fill="#00A040" />
+                        <circle cx="8" cy="16" r="4.2" fill="#00A040" />
+                        <circle cx="16" cy="16" r="4.2" fill="#00A040" />
+                        <path
+                          d="M12 13c.4 3 2.2 5.5 5.5 6.5"
+                          stroke="#00A040"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                      <strong class="zhiznmart-title">Жизньмарт</strong>
+                    </span>
+                    <p class="card-category">Retail & IT / Обучение · 2021–2023</p>
+                  </div>
+                  <h3>Помогал сотрудникам осваивать IT-системы и снимал операционное трение</h3>
                   <p>
-                    Изучал сложности сотрудников во внутренних IT-системах, создавал курсы и
-                    инструкции для линейного персонала. Знаком с контекстом Retail и переводом
-                    сложных процессов в понятные действия.
+                    Работал напрямую с линейным персоналом магазинов: изучал, где сотрудники
+                    спотыкаются во внутренних IT-системах и кассовых сценариях, разрабатывал курсы и
+                    инструкции. Этот опыт дал глубокое понимание процессов ритейла и ресторанных
+                    операций: как проектировать AI-автоматизацию так, чтобы она реально решала боли
+                    команды на смене, а не создавала новое трение.
                   </p>
                 </div>
               </article>
@@ -357,17 +452,19 @@
         </div>
       </section>
       <section class="approach wrap" aria-labelledby="approach-title">
-        <p class="eyebrow">Как я работаю</p>
+        <p class="eyebrow">Архитектурный подход</p>
         <div>
-          <h2 id="approach-title"><em>Я направляю</em><br />ИИ помогает создавать.</h2>
+          <h2 id="approach-title"><em>Архитектура решений</em><br />ИИ как мультипликатор.</h2>
           <p>
-            Разрабатываю с ИИ-агентами. Формулирую задачи и ограничения, контролирую алгоритмы и
-            архитектуру данных, проверяю решения и провожу дополнительные аудиты с ИИ. Часть
-            технических решений предлагают агенты — мой вклад в каждом кейсе описан отдельно.
+            Выступаю архитектором систем: проектирую структуру данных, логику интеграций, сценарии
+            валидации и ограничения безопасности. AI-инструменты использую как мультипликатор
+            инженерной скорости: для быстрой проверки гипотез, прототипирования, покрытия тестами и
+            сквозного аудита.
           </p>
           <div class="approach-steps">
-            <span>Понять задачу</span><i aria-hidden="true">→</i><span>Собрать решение</span
-            ><i aria-hidden="true">→</i><span>Проверить в работе</span>
+            <span>Спроектировать логику</span><i aria-hidden="true">→</i
+            ><span>Собрать и протестировать</span><i aria-hidden="true">→</i
+            ><span>Запустить в продакшн</span>
           </div>
         </div>
       </section>
@@ -410,11 +507,13 @@
 
           <h3>Контекст и мой вклад</h3>
           <p>
-            Развиваю игрового бота закрытого дизайн-сообщества. В начале активно участвовал в
-            написании кода, но с развитием агентов оставил написание кода ИИ, ускорив на порядок
-            скорость внедрения фич. Определяю сценарии, контролирую алгоритмы и архитектуру данных,
-            проверяю решения. Интегрировал ИИ в бота для повышения интерактивности и для выполнения
-            прикладных задач, включая увеличение имерсивности игровых механик.
+            Развиваю игрового бота закрытого дизайн-сообщества. Выступаю архитектором системы:
+            проектирую схемы баз данных, пайплайны векторизации и логику интеграций. Использование
+            AI-агентов для генерации кода позволяет мне кратно ускорить поставку решений и
+            сосредоточиться на надёжности архитектуры, обработке граничных случаев и системных
+            ограничениях. Лично спроектировал и интегрировал RAG и text-to-SQL, связав разнородные
+            модели в устойчивую экосистему для решения прикладных задач и увеличения иммерсивности
+            игровых механик.
           </p>
           <h3>Общение с памятью: RAG по истории чата</h3>
           <p>
@@ -437,12 +536,13 @@
           </p>
           <h3>Своя статистика: text-to-SQL</h3>
           <p>
-            Бот как продукт начинался со сбора статистик и предлагал фикисрованные команды вроде
+            Бот как продукт начинался со сбора статистик и предлагал фиксированные команды вроде
             топа людей по сообщениям или стикерам за неделю. Для каждого топа требовалась отдельная
             команда в коде. Теперь пользователь может сам задавать выборку обычным текстом. LLM
             получает вопрос, семантическую схему БД и ограничения. Схема обновляется вместе с
-            данными; чувствительные поля исключены. Перед выполнением бот проверяет SELECT и чёрный
-            список полей чтобы не допустить утечку чувствительных данных.
+            данными; чувствительные поля исключены. Перед выполнением бот проверяет
+            <code>SELECT</code> и чёрный список полей, чтобы не допустить утечку чувствительных
+            данных.
           </p>
           <div
             class="feature-flow"
@@ -469,7 +569,7 @@
             ><b aria-hidden="true">→</b><span>Пересказ LLM</span><b aria-hidden="true">→</b
             ><span>Подсказка в чате</span>
           </div>
-          <h3>Урок безопасности, ставший фичёй</h3>
+          <h3>Урок безопасности, ставший фичей</h3>
           <p>
             Участник запросил через text-to-SQL расписание случайных игровых сообщений с наградой.
             Бот вернул его из БД, и участник смог ставить будильник вместо постоянного ожидания в
@@ -477,13 +577,15 @@
             сохранить как игровую фичу. Этот случай показал, что границы доступа нужно определять и
             на уровне продуктовых правил.
           </p>
-          <h3>Эксплуатация и развитие</h3>
+          <h3>Эксплуатация и каскадная архитектура</h3>
           <p>
             Весной 2026 года AI-функции работали через Ollama и локальный worker, с сентября — через
-            облачные API. Типизатор выбирает нужный обработчик. Для каждой задачи есть пул моделей с
-            переключением при отсутствии ответа: бесплатных лимитов хватает на ежедневную работу.
-            Бот размещён на сервере; есть веб-интерфейс, десктопный питомец, TTS и генерация
-            изображений.
+            облачные API. Роутер намерений классифицирует входящий запрос и выбирает оптимальный
+            обработчик. Для каждой задачи настроен каскадный пул моделей (Model Fallback): быстрые
+            компактные LLM для базовых сценариев и мощные модели для сложного reasoning и генерации
+            SQL. Такая многоуровневая архитектура гарантирует стабильный отклик, минимизирует
+            latency и оптимизирует затраты на инференс. Бот размещён на сервере; есть веб-интерфейс,
+            десктопный питомец, TTS и генерация изображений.
           </p>
           <div class="project-tags">
             <span>Python</span><span>SQLite</span><span>Qdrant</span><span>Gemini Embedding 2</span
@@ -561,8 +663,9 @@
           </p>
           <h3>Мой вклад</h3>
           <p>
-            Определил потребности и основные сценарии, спроектировал взаимодействие с минимальным
-            числом нажатий и разработал решение с помощью ИИ.
+            Спроектировал модель данных, пользовательские сценарии ввода с минимальным числом
+            касаний и асинхронную логику бота-напоминателя в Telegram. Разработал архитектуру
+            решения в связке с AI-инструментами.
           </p>
         </article>
       </details>
@@ -584,32 +687,128 @@
             анализирует структуру и возвращает текст с готовой разметкой. Операция собрана в одно
             действие внутри инструмента, где пользователь уже работает с текстом.
           </p>
-          <div class="before-after">
-            <div>
-              <span class="card-category">До / Plain text</span>
-              <pre>
+          <div class="markdown-pipeline-demo" id="markdown-demo">
+            <div class="demo-controls" role="tablist" aria-label="Этапы обработки текста">
+              <button
+                type="button"
+                class="demo-step-btn active"
+                data-step="0"
+                role="tab"
+                aria-selected="true"
+              >
+                <span class="step-num">01</span> Исходный текст
+              </button>
+              <button
+                type="button"
+                class="demo-step-btn"
+                data-step="1"
+                role="tab"
+                aria-selected="false"
+              >
+                <span class="step-num">02</span> LLM-пайплайн
+              </button>
+              <button
+                type="button"
+                class="demo-step-btn"
+                data-step="2"
+                role="tab"
+                aria-selected="false"
+              >
+                <span class="step-num">03</span> Markdown
+              </button>
+              <button
+                type="button"
+                class="demo-step-btn"
+                data-step="3"
+                role="tab"
+                aria-selected="false"
+              >
+                <span class="step-num">04</span> Рендер
+              </button>
+            </div>
+
+            <div class="demo-stage">
+              <!-- State 1: Plain text -->
+              <div class="stage-frame active" data-stage="0">
+                <div class="frame-bar">
+                  <span class="frame-dot"></span><span class="frame-title">input.txt</span>
+                </div>
+                <pre class="frame-code">
 План встречи
 Обсудить
 Приоритеты команды
 Следующие шаги</pre>
+              </div>
+
+              <!-- State 2: LLM Pipeline -->
+              <div class="stage-frame" data-stage="1">
+                <div class="frame-bar">
+                  <span class="frame-dot frame-dot-pulse"></span
+                  ><span class="frame-title">llm_pipeline.log</span>
+                </div>
+                <div class="frame-terminal">
+                  <div class="term-line">
+                    <span class="term-prompt">⚡</span>
+                    <span class="term-accent">POST /v1/chat/completions</span> · temp=0.2
+                  </div>
+                  <div class="term-line">
+                    <span class="term-muted">→ Чанкинг:</span> 4 строки, семантическая иерархия
+                  </div>
+                  <div class="term-line">
+                    <span class="term-muted">→ Обнаружен H1:</span> "План встречи" (conf: 0.99)
+                  </div>
+                  <div class="term-line">
+                    <span class="term-muted">→ Обнаружен H2:</span> "Обсудить" (conf: 0.98)
+                  </div>
+                  <div class="term-line">
+                    <span class="term-muted">→ Выделен список:</span> 2 пункта (bullet markers)
+                  </div>
+                  <div class="term-line term-success">✓ Разметка восстановлена за 240ms</div>
+                </div>
+              </div>
+
+              <!-- State 3: Markdown syntax -->
+              <div class="stage-frame" data-stage="2">
+                <div class="frame-bar">
+                  <span class="frame-dot"></span><span class="frame-title">output.md</span>
+                </div>
+                <pre class="frame-code"><span class="code-h1"># План встречи</span>
+<span class="code-h2">## Обсудить</span>
+<span class="code-li">- Приоритеты команды</span>
+<span class="code-li">- Следующие шаги</span></pre>
+              </div>
+
+              <!-- State 4: Rendered document -->
+              <div class="stage-frame" data-stage="3">
+                <div class="frame-bar">
+                  <span class="frame-dot"></span><span class="frame-title">rendered_view.html</span>
+                </div>
+                <div class="frame-rendered">
+                  <h4 class="rendered-h1">План встречи</h4>
+                  <h5 class="rendered-h2">Обсудить</h5>
+                  <ul class="rendered-ul">
+                    <li>Приоритеты команды</li>
+                    <li>Следующие шаги</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div>
-              <span class="card-category">После / Markdown</span>
-              <pre>
-# План встречи
-## Обсудить
-- Приоритеты команды
-- Следующие шаги</pre>
-            </div>
+            <div class="demo-progress-bar"><div class="demo-progress-fill"></div></div>
           </div>
-          <p class="caption">Иллюстративный пример преобразования текста в Markdown.</p>
+          <p class="caption">
+            Автоматический цикл преобразования текста: от сырого ввода до размеченного и
+            отрендеренного документа.
+          </p>
           <h3>Результат</h3>
           <p>
             Создан редактор с целевым LLM-действием для повторяющейся задачи. Кейс показывает
             применение модели к конкретному этапу рабочего процесса.
           </p>
           <h3>Мой вклад</h3>
-          <p>Сформулировал задачу и пользовательский сценарий, создал инструмент с помощью ИИ.</p>
+          <p>
+            Сформулировал сценарий, разработал промпт с правилами классификации и валидации
+            структуры текста, реализовал инструмент в связке с AI-ассистентами.
+          </p>
         </article>
       </details>
       <details id="case-gps" class="case-detail">
@@ -664,9 +863,8 @@
           </p>
           <h3>Мой вклад</h3>
           <p>
-            Определил потребность, спроектировал сценарий редактирования и создал приложение с
-            помощью ИИ. Главный акцент проекта — превращение конкретной проблемы в доступное
-            мобильное действие.
+            Спроектировал модель данных трека, алгоритм разделения активности на участки и сценарии
+            мобильного редактирования на карте. Реализовал приложение в связке с AI-инструментами.
           </p>
         </article>
       </details>
@@ -853,6 +1051,17 @@
       <div class="dialog-footer">
         <span>Вадим Баранов / Портфолио</span
         ><button type="button" class="text-link dialog-close">Закрыть кейс ↑</button>
+      </div>
+    </dialog>
+    <dialog id="lightbox-dialog" class="lightbox-dialog" aria-label="Увеличенное изображение">
+      <div class="lightbox-content">
+        <button type="button" class="lightbox-close" aria-label="Закрыть изображение">
+          <span aria-hidden="true">✕</span>
+        </button>
+        <div class="lightbox-image-wrap">
+          <img id="lightbox-img" src="" alt="" />
+        </div>
+        <p id="lightbox-caption" class="lightbox-caption"></p>
       </div>
     </dialog>
   </body>
