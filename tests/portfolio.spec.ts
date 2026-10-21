@@ -69,12 +69,13 @@ test('direct URL, back and forward keep case state in sync', async ({ page }) =>
   await expect(page.getByRole('dialog')).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(page).not.toHaveURL(/#case-/);
+  const gpsHeading = await page.locator('#case-gps h2').textContent();
   await page.locator('[data-case="gps"]').click();
   await page.goBack();
   await expect(page.getByRole('dialog')).not.toBeVisible();
   await page.goForward();
   await expect(page.getByRole('dialog')).toBeVisible();
-  await expect(page.getByRole('dialog').locator('h2')).toContainText('Маршрут');
+  await expect(page.getByRole('dialog').locator('h2')).toHaveText(gpsHeading!);
   await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog')).not.toBeVisible();
 });
